@@ -27,11 +27,10 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
             return;
         }
 
-
         final String message = options.getString("message");
         final String duration = options.getString("duration");
         final String position = options.getString("position");
-        final int addPixelsY = options.hasKey("addPixelsY") ? options.getInt("addPixelsY") : 0;
+        final int addPixelsY = options.hasKey("addPixelsY") ? (int) (getReactApplicationContext().getResources().getDisplayMetrics().density * options.getInt("addPixelsY")) : 0;
 
         UiThreadUtil.runOnUiThread(new Runnable() {
             public void run() {

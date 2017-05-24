@@ -51,12 +51,13 @@ const showWithOptions = function (options) {
     RCTToast.show(options);
 };
 
-const showToast = function (message, duration, position) {
+const showToast = function (message, duration, position, offsetY) {
     showWithOptions(
       optionsBuilder()
           .withMessage(message || '未知数据')
           .withDuration(duration)
           .withPosition(position)
+          .withAddPixelsY(offsetY || 0)
           .build()
       );
 };
@@ -87,6 +88,10 @@ Toast.showLongBottom = function (message) {
 
 Toast.show = function (message) {
     showToast(message, 'short', 'bottom');
+};
+
+Toast.showFlexibleLongTop = function (message, offsetY) {
+    showToast(message, 'long', 'top', offsetY);
 };
 
 Toast.hide = function () {
