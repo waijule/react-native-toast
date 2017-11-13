@@ -2,14 +2,15 @@
 #import <React/RCTLog.h>
 #import <React/RCTBridgeModule.h>
 #import "Toast+UIView.h"
+#import <Toaster/Toaster.h>
 
 
-@interface Toast : NSObject <RCTBridgeModule>
+@interface Toaster : NSObject <RCTBridgeModule>
 @end
 
-@implementation Toast
+@implementation Toaster
 
-RCT_EXPORT_MODULE(Toast)
+RCT_EXPORT_MODULE(Toaster)
 
 
 RCT_EXPORT_METHOD(show:(NSDictionary *)options) {
@@ -34,13 +35,13 @@ RCT_EXPORT_METHOD(show:(NSDictionary *)options) {
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[[[UIApplication sharedApplication]windows]firstObject] makeToast:message duration:durationInt position:position addPixelsY:addPixelsY == nil ? 0 : [addPixelsY intValue]];
+        [[Toast makeText:message delay:0 duration:durationInt position:position addedOffsetY: [addPixelsY doubleValue]] show];
     });
 }
 
 RCT_EXPORT_METHOD(hide) {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[[[UIApplication sharedApplication]windows]firstObject] hideToast];
+        [Toast hide];
     });
 }
 

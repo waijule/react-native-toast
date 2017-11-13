@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		327633601BFAAE28004DA88E /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 3276335D1BFAAE28004DA88E /* Toast.m */; };
-		327633611BFAAE28004DA88E /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3276335F1BFAAE28004DA88E /* Toast+UIView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +25,6 @@
 /* Begin PBXFileReference section */
 		327633421BFAAD7E004DA88E /* libRCTToast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTToast.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3276335D1BFAAE28004DA88E /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
-		3276335E1BFAAE28004DA88E /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
-		3276335F1BFAAE28004DA88E /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				3276335D1BFAAE28004DA88E /* Toast.m */,
-				3276335E1BFAAE28004DA88E /* Toast+UIView.h */,
-				3276335F1BFAAE28004DA88E /* Toast+UIView.m */,
 			);
 			path = RCTToast;
 			sourceTree = "<group>";
@@ -123,7 +118,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				327633611BFAAE28004DA88E /* Toast+UIView.m in Sources */,
 				327633601BFAAE28004DA88E /* Toast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +128,7 @@
 		327633541BFAAD7E004DA88E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -176,12 +171,14 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		327633551BFAAD7E004DA88E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -217,6 +214,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -224,6 +222,11 @@
 		327633571BFAAD7E004DA88E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -231,12 +234,20 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "RCTToast-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		327633581BFAAD7E004DA88E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -244,6 +255,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "RCTToast-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
