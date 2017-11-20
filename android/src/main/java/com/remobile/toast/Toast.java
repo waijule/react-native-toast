@@ -18,7 +18,7 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
 
     @Override
     public String getName() {
-        return "RCTToast";
+        return "RCTToaster";
     }
 
     @ReactMethod

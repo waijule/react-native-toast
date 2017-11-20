@@ -5,7 +5,7 @@ const {
     NativeModules,
 } = ReactNative;
 
-const RCTToast = NativeModules.Toast;
+const RCTToast = NativeModules.Toaster;
 const Toast = {};
 
 const optionsBuilder = function () {
